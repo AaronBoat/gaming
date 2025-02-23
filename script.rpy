@@ -43,11 +43,11 @@ image 1_bg3_1 = "images/1-bg3-1.png"
 image 1_bg3_2 = "images/1-bg3-2.png"
 image 1_bg3_3 = "images/1-bg3-3.png"
 image 1_bg3_4_home of lidaniang_bg = "images/1-bg3-4(home of wangdaniang_bg).png"
-image 2_bg4_1_the village_bg = "images/2-bg4-1(the village_bg).png"
+image 2_bg4_1_village_bg = "images/2-bg4-1(the village_bg).png"
 image 2_bg5_9_on the mountain_bg = "images/2-bg5&9(on the mountain_bg).png"
 image 2_bg6_1 = "images/2-bg6-1.png"
 image 2_bg7_1 = "images/2-bg7-1.png"
-image 2_bg8_10_home of the village head_bg = "images/2-bg8&10(home of the village head_bg).png"
+image 2_bg8_10_village_head_home = "images/2-bg8&10(home of the village head_bg).png"
 image 2_shot3 = "images/2-shot3.png"
 image 2_shot4 = "images/2-shot4.png"
 image Japanese devils go die_1 = "images/Japanese devils go die-1.png"
@@ -68,11 +68,11 @@ image 4_15 = "images/4-15.png"
 image 4_16 = "images/4-16.png"
 image final_cg = "images/final_cg.png"
 
+# 背景大小有待调整
+
 # 定义音效路径,示例audio blahblah = "sounds/blahblah.wav"
 # audio = "sounds/.wav"
-
 # 作一个声明：场景内背景切换我使用的都是with dissolve
-# 所有的停顿我都用的2s，后面看不合适再调整
 
 # 游戏在此开始。
 label start:
@@ -81,16 +81,21 @@ label start:
 
     # 场景1：逃亡路上
     scene 1_bg1_1 with dissolve  # 1-场景1-1
-    play music train_sound
+    # play music train_sound
 
     scene 1_bg1_2 with dissolve  # 1-场景1-2
 
     # 场景2：回忆与现实
-    scene 1_bg1_2 with dissolve
-    play music wind_sound
+    scene 1_bg2_1 with dissolve
+    scene 1_bg2_2 with dissolve
+    scene 1_bg2_3 with dissolve
+    # play music wind_sound
 
     # 场景3：遇救
     scene 1_bg3_1 with dissolve
+    scene 1_bg3_2 with dissolve
+    scene 1_bg3_3 with dissolve
+    scene 1_bg3_4 with dissolve
     show lidaniang at left with dissolve
     lidaniang "（惊喜，停下手中动作，直起身子）大壮，你终于醒了！（脸上皱纹舒展开，眼中满是关切）"
     zhangyouxi "（一脸茫然，微微皱眉）我不叫大壮啊，大壮是谁？"
@@ -99,9 +104,9 @@ label start:
     lidaniang "（愣住，手中动作停下，眼中泛起泪花）我知道你不是我的孩子。但是还是不自觉就……唉……没关系，这顿窝窝我请你吃，可怜的孩子。"
     zhangyouxi "（不好意思，赶紧走上前）谢谢大娘，那个，我帮您磨吧。"
     lidaniang "（带着泪的微笑，点点头）咱们一块来吧，大壮还在的时候我们经常一块磨。"
-    play sound mill_turning_sound
-    play sound wind_sound
-    play sound dog_barking_sound
+    # play sound mill_turning_sound
+    # play sound wind_sound
+    # play sound dog_barking_sound
 
     # 第二章：村庄生活
 
@@ -111,11 +116,11 @@ label start:
     villager_b "（焦急地）唉，我娘腿脚不利索，想走也走不掉。那个，木生叔，能不能借我家一点粮食，我家快断粮了。"
     villager_a "（面露难色）我家日子也紧得很啊，还有俩小孩要喂，自己吃都快不够了，拿不出来了。"
     liuhu "（喘着粗气，急切地）我……我看见有一队日本人……往你们村子这边来了……约莫这有十五六人，要再来抢粮食……他们一看就不熟……山上，大概……五六天后就要到了……你们……你们快准备逃吧。"
-    play sound wind_sound
-    play sound villagers_talking_sound
+    # play sound wind_sound
+    # play sound villagers_talking_sound
 
     # 场景5：结识王秀风
-    scene 2_bg5_1_forest with dissolve
+    scene 2_bg5_9_on the mountain_bg with dissolve
     show zhangyouxi at right with dissolve
     show wangxiufeng at left with dissolve
     zhangyouxi "（疑惑）那个，你跟我做什么。"
@@ -129,35 +134,35 @@ label start:
     zhangyouxi "（皱眉，看着她的脚）这不行，你这走不了了，又遇见个野猪咋办？柴火哪有你重要？"
     zhangyouxi "（背起王秀风后，身体一僵，意识到不对）额，不好意思了。"
     wangxiufeng "（沉默，脸更红了，轻轻摇头）没……没关系。"
-    play sound pig_roaring_sound
-    play sound footsteps_sound
-    play sound wind_sound
-    play sound wangxiufeng_scream_sound
+    # play sound pig_roaring_sound
+    # play sound footsteps_sound
+    # play sound wind_sound
+    # play sound wangxiufeng_scream_sound
 
     # 场景6：遇虎被救
-    scene 2_bg6_1_snowy_forest with dissolve
     show zhangyouxi at right with dissolve
     show wangxiufeng at left with dissolve
     wangxiufeng "（轻声，带着一丝恐惧）给你添了好多麻烦。"
     zhangyouxi "（喘着粗气）这不算啥。"
     wangxiufeng "（颤抖）你……你听到了吗？"
     zhangyouxi "（低声，紧张）要命，是老虎！"
+    scene 2_bg6_1 with dissolve
     lisan "（大声）好了，别在那搂搂抱抱了，怪肉麻的！"
     zhangyouxi "（惊喜，看向李三）李三叔，原来是您！"
-    play sound tiger_roaring_sound
-    play sound wind_sound
-    play sound heavy_footsteps_sound
-    play sound gun_sound
+    # play sound tiger_roaring_sound
+    # play sound wind_sound
+    # play sound heavy_footsteps_sound
+    # play sound gun_sound
 
     # 场景7：李三的过往
-    scene 2_bg7_1_lisan_cabin with dissolve
+    scene 2_bg7_1 with dissolve
     show lisan at center with dissolve
     wangxiufeng "（疑惑，看向李三）叔，你有这样的本事，连老虎都不怕，而且还默默守护着村子。可是，为什么之前鬼子来的时候，一面也不出来呢？"
     lisan "（放下酒碗，沉默片刻，眼神变得深沉）对不起，丫头，我那时候不能出手。东北三省几个月内全部被小日本侵占，我杀不尽侵略村子的小鬼子，一旦把事端闹大，整个村子可能会遭受灭顶之灾。（眼神中透露出无奈和不甘）"
     lisan "（指着地图，语气坚定）我一直等待着，组织一支东北人民自己的自卫部队，向日本人复仇！我以前当过东北军的步兵连长，行军打仗，要靠团结，要靠万众一心，同仇敌忾的气势！可那时的形势还不够。中国很多地方没有一个正确的党的领导，没有觉醒的思想，不敢团结起来为幸福的日子战斗！你们知道共产党吗？我曾遇到过一个，他才是一个真正的英雄，为了他说的‘人人自由平等的新中国’付出生命来。（眼中闪烁着希望的光芒）"
-    play sound fire_crackling_sound
-    play sound drinking_sound
-    play sound occasional_cough_sound
+    # play sound fire_crackling_sound
+    # play sound drinking_sound
+    # play sound occasional_cough_sound
 
     # 第三章：新的希望
 
@@ -170,29 +175,28 @@ label start:
     zhaohanlie "（微微皱眉，眼中闪过一丝愤怒）实不相瞒，汉烈出生在一军官世家，日本人入侵，东北军方竟然妥协不抵抗，我义愤填膺，加入了东北义勇军，自发抗日。但可惜我实战经验不足，战斗失利，逃亡到这里。"
     zhangyouxi "（热情地）汉烈哥，你有啥需要帮忙的尽管跟我说，我肯定尽全力帮助！"
     zhaohanlie "（感激地）不能太麻烦兄弟你，我被村长老人家收留，自然要帮持村长家的生活，不然良心不安。只是我自幼没做过农活，还望张兄教导。"
-    play sound wind_sound
-    play sound indoor_talking_sound
+    # play sound wind_sound
+    # play sound indoor_talking_sound
 
     # 场景9：组建义勇军
-    scene 2_bg4_1_village_bg with dissolve  # 镜头运动：场景2-4-1
+    scene 2_bg4_1_village_bg with dissolve
     zhaohanlie "（眼神坚定，看向村庄）你看村子被日本人侵略得多么可怜，我打算在这一片地带组织抗日义勇军，大家团结起来，打鬼子，保家园。"
     zhangyouxi "（毫不犹豫，眼神同样坚定）我第一个加入，咱们一起为了‘人人平等幸福的新中国’努力吧！"
     zhaohanlie "（惊喜，紧紧握住张有喜的手）你说出了我一直想表达的话……"
     zhangyouxi "（腼腆）其实这句话是李三叔提到的一个共产党员讲的。"
-    play sound wind_sound
-    play sound indoor_talking_sound
+    # play sound wind_sound
+    # play sound indoor_talking_sound
 
     # 第四章：战争来临
 
     # 场景10：鬼子消息
-    scene 2_bg4_1_village_bg with dissolve  # 镜头运动：场景2-4-1
     villager_a "（无奈地叹气）等到来年开春，我就收拾着逃到山东去，这日子怎么过？"
     villager_b "（焦急地）唉，我娘腿脚不利索，想走也走不掉。那个，木生叔，能不能借我家一点粮食，我家快断粮了。"
     villager_a "（面露难色）我家日子也紧得很啊，还有俩小孩要喂，自己吃都快不够了，拿不出来了。"
     liuhu "（喘着粗气，急切地）我……我看见有一队日本人……往你们村子这边来了……约莫这有十五六人，要再来抢粮食……他们一看就不熟……山上，大概……五六天后就要到了……你们……你们快准备逃吧。"
-    play sound wind_sound
-    play sound villagers_talking_sound
-    play sound liuhu_panting_sound
+    # play sound wind_sound
+    # play sound villagers_talking_sound
+    # play sound liuhu_panting_sound
 
     # <备战>
 
@@ -212,22 +216,22 @@ label start:
     villager_a "（脸色大变，额头青筋暴起，大步走到刘虎面前，一脚冲他踹去。刘虎被连人带凳一脚蹬翻）（巨大的“砰”一声）你这没娘教的东西！"
     liuhu "（立马站起身,举起拳头要动手）你……（被青年村民拉住）"  # 我发现这里不能在青年村民后加b或B，否则括号会被识别为特殊字符
     zhaohanlie "（拉开两人）木生叔，大局为重！"
-    play sound coal_lamp_burning_sound
-    play sound villagers_talking_sound
-    play sound villager_a_angry_sound
+    # play sound coal_lamp_burning_sound
+    # play sound villagers_talking_sound
+    # play sound villager_a_angry_sound
 
     # 镜头2：村长的决定
     village_head "（气沉丹田，铿锵有力）打！必须打！"
-    play sound village_head_determined_sound
+    # play sound village_head_determined_sound
 
     # 镜头3：村长的背影
     village_head "（颤颤巍巍地起身，深一脚浅一脚地踏过天井的积雪，往茅房走去，留下矮矮的背影）"
-    play sound village_head_walking_sound
-    play sound snow_crunching_sound
+    # play sound village_head_walking_sound
+    # play sound snow_crunching_sound
 
     # 场景2：黑夜中的北山，鬼子的队伍里
     # 镜头4：鬼子的扎营
-    scene 2_bg5_9_on_the_mountain_bg with dissolve
+    scene 2_bg4_1_village_bg with dissolve
     japanese_soldier_a "村田，你的家乡，北海道那边，也是这样冷吗？"
     cuntian "没有啊，该死，怎么这么冷，我有些想回家了。"
     japanese_soldier_c "你这样的软蛋怎么混进我们部队的？不把整个中国征服，你就想逃？"
@@ -239,13 +243,13 @@ label start:
     japanese_soldier_a "(震惊)少佐，你怎么能对同胞开枪?"
     guitian "你们，不，我们，都是帝国的兵器，如果你不接受这份荣誉，我也会对你开枪。"
     "士兵们不语,只是茫然地看着地上的尸体,血色蔓延成河,在冰面上凝固,也许下一个就是他们自己。狂风不止，像旷野上孑然的孤魂。"
-    play sound wind_sound
-    play sound japanese_talking_sound
-    play sound gun_sound
+    # play sound wind_sound
+    # play sound japanese_talking_sound
+    # play sound gun_sound
 
     # 场景3：清晨村中央
     # 镜头5：紧急通知
-    scene 2_bg4_1_village_bg with dissolve
+    scene 1_bg3_4_home of lidaniang_bg with dissolve
     liuhu "（敲门）李大娘，有喜，村长有急事找大家，快到村中央集合！"
     "张有喜略带错愕看着这个穿黄大衣，戴鹿毡帽的小伙子。刘虎看上去也就十六七岁，他稚气中带着土气，脸颊冻得红红。"
     zhangyouxi "（开门，略带错愕）你是？"
@@ -256,9 +260,9 @@ label start:
     liuhu "（稍昂起头）你见过这么有大将风度的土匪？我可是正统军官出身。"
     zhangyouxi "（略带玩笑）和汉烈哥一样？感觉不太像啊。"
     liuhu "（轻笑一声）你……爱信不信吧。"
-    play sound knocking_sound
-    play sound door_opening_sound
-    play sound talking_sound
+    # play sound knocking_sound
+    # play sound door_opening_sound
+    # play sound talking_sound
 
     # 镜头6：村中央的集结
     scene 2_bg4_1_village_bg with dissolve
@@ -268,12 +272,11 @@ label start:
     village_head "（用最大的力气，虽气力不足，一句一顿，但力量不减）小伙子们，鬼子杀害了我们的家人，抢走了我们的粮食，我们，必须，得反抗，必须，报仇！"
     villager_b "村长，我们就拿着锄头，咋报仇！"
     village_head "（咳嗽，后继续鼓足力气）我们用猎枪！猎枪没了用锄头！锄头没了用棍子！棍子没了拿锅碗砸！锅碗没了拿拳头打，拿牙咬，拿腿踢！要是鬼子来了，我不要这把老骨头了，第一个上！"
-    play sound villagers_talking_sound
-    play sound village_head_speaking_sound
-    play sound coughing_sound
+    # play sound villagers_talking_sound
+    # play sound village_head_speaking_sound
+    # play sound coughing_sound
 
     # 镜头7：村民的响应
-    scene 2_bg4_1_village_bg with dissolve
     "众人的喧哗立刻沉寂下来，没人再嬉笑，没人再议论。村长的悲愤和决心感染了每一个人。"
     village_head "（看着一片沉默，接着说）我，没疯。你们别笑我，上次鬼子来了我是一个屁不敢放，看着儿子被打死，就那么拿枪给打死啊！"
     village_head "（激动）李服二，你爹，六十多岁的老李头，老老实实干了一辈子农活，他有什么错？凭什么被一枪打死，死得那么惨？还有王占虎，你孩子，才五岁大，你不记得是怎么死的了？王香芹，你的汉子，又是怎么死的，你也忘了？"
@@ -282,32 +285,31 @@ label start:
     "村长越说越激动，尽力挺直的背因剧烈的咳嗽佝偻下去。"
     villager_b "（愤怒地）打鬼子！打鬼子！打鬼子！"
     zhaohanlie "（跟着村民一起喊）跟我一起，报仇！报仇！报仇！"
-    villager_1 "我家有猎枪，要一枪打死小鬼子！"
-    villager_2 "我拿斧子砍也要砍死小鬼子！"
+    villager_a "我家有猎枪，要一枪打死小鬼子！"
+    villager_b "我拿斧子砍也要砍死小鬼子！"
     "人们的响应声越来越大，村子从未如此昂扬过，张有喜加入了其中。男人，女人，老人，孩子，在死亡的斧钺下竟然有着这般决绝勇魄。"
-    play sound villagers_cheering_sound
-    play sound village_head_speaking_sound
+    # play sound villagers_cheering_sound
+    # play sound village_head_speaking_sound
 
     # 镜头8：自卫队的成立
-    scene 2_bg4_1_village_bg with dissolve
     "村子自卫队定了下来，由经过军事训练和军事理论教育的赵汉烈当总指挥，李三当教官，刘虎自告奋勇当侦查兵，张有喜也在其中，甚至，还有“王秀风”，整个自卫队，有四十二人，都是青壮年。"
     zhaohanlie "（手里拿着一根木棍，充当指挥棒）乡亲们，我们没有正规的武器，但我们的决心和勇气就是最强大的武器！"
     "他声音嘹亮，在寒冷的空气中回荡。"
     "村民们排成几列，手中拿着各种工具：锄头、镰刀、木棍，甚至还有几把锈迹斑斑的猎枪。李三站在赵汉烈身边，不时纠正着村民的动作。他的眼神坚定，仿佛回到了当年在东北军的日子。"
     lisan "嘿！小子，你这么端枪打得中谁！别害怕，把鬼子想象成一头狍子，一枪要命！就这么简单。"
     "张有喜略带错愕地看着这个穿黄大衣，戴鹿毡帽的小伙子。刘虎看上去也就十六七岁，他稚气中带着土气，脸颊冻得红红。"
-    play sound villagers_training_sound
-    play sound zhaohanlie_speaking_sound
+    # play sound villagers_training_sound
+    # play sound zhaohanlie_speaking_sound
 
     # 镜头9：刘虎的画
-    scene 2_bg4_1_village_bg with dissolve
+    scene 3_shot9 with dissolve
     "村西头的一个屋角，刘虎捡着一块红砖碎片，在地上画画，他还是没脱他那件黄色破旧大衣，画着山，大树，房子，鹿，枪，还有书……偶尔有孩子经过他旁边。"
     liuhu "嘿，你看我画的像不像？"
     child "你倒像个傻狍子一样。"
     liuhu "看不起我刘大将军？不服你来画一个？"
     "孩子被刘虎的凶相吓开，刘虎看着孩子走开，尴尬地摸了摸头，接着又继续自顾自地画了起来。"
-    play sound liuhu_drawing_sound
-    play sound child_laughing_sound
+    # play sound liuhu_drawing_sound
+    # play sound child_laughing_sound
 
     # 镜头10：自卫队的准备
     scene 2_bg8_10_village_head_home with dissolve
@@ -323,11 +325,11 @@ label start:
     lisan "两边都提前部七人防备。到时候依战局而定，鬼子主力去哪边，我就去追击哪边！另一边，让有喜带队去追击！"
     zhaohanlie "那么，从今天开始，组织好巡逻队，随时预备敌人来袭。"
     lisan "别看那刘虎吊儿郎当，腿脚跟野兔子一样快，而且我能感觉，这小子心里很有数。"
-    play sound planning_sound
-    play sound talking_sound
+    # play sound planning_sound
+    # play sound talking_sound
 
     # 镜头11：北村“假村子”的修建
-    scene 2_bg4_1_village_bg with dissolve
+    scene 3_shot11 with dissolve
     "北村“假村子”修建中，大家都卯足了劲，为与鬼子大战做准备。"
     zhangyouxi "（扭头望向秀风）你爹真的放心你来吗？"
     wangxiufeng "（一脸嫌弃）不用管那个臭酒鬼。"
@@ -336,9 +338,9 @@ label start:
     zhangyouxi "（转过头来，脸刷的一下红了）当……有些吧。"
     liuhu "（冲过来）嘿，有喜！你偷懒被我抓着了！（他的大鹿皮毡帽随脑袋摇晃着）"
     "两人相视一笑，各自继续挥动手中的铲子……"
-    play sound building_sound
-    play sound talking_sound
-    play sound laughing_sound
+    # play sound building_sound
+    # play sound talking_sound
+    # play sound laughing_sound
 
     # 战争
     # 镜头1：自卫队的准备
@@ -347,31 +349,29 @@ label start:
     "而刘虎带着两个敏捷的自卫队成员，在北边山林侦查鬼子队伍的踪迹，他们是掌握先机的关键。"
     lisan "大家注意，鬼子随时可能到来，保持警惕！"
     zhangyouxi "明白，我们会小心的。"
-    play sound wind_sound
-    play sound villagers_readying_sound
+    # play sound wind_sound
+    # play sound villagers_readying_sound
 
     # 镜头2：刘虎的侦查
-    scene 2_bg5_9_on_the_mountain_bg with dissolve
+    scene 2_bg5_9_on the mountain_bg with dissolve
     "中午，北山，小雪。"
     liuhu "（半开玩笑）哈哈，兴许鬼子绕道去别处了呢？退而……对，退而求其次！寇……对，寇贼遇大寒，道中饥寒死伤过半，驾马回逃！"
     self_defence_team_member_a "虎子，别瞎想了，注意观察。"
     self_defence_team_member_b "往北继续上山走吧，雪会越下越大的。"
-    play sound wind_sound
-    play sound footsteps_sound
+    # play sound wind_sound
+    # play sound footsteps_sound
 
     # 镜头3：发现敌人
-    scene 2_bg5_9_on_the_mountain_bg with dissolve
     "枪声！刘虎心头一颤。"
     "声音从刘虎一行人东北侧传来，敌人已经到来。刘虎按住两个队友，自己一个人上前去勘探。"
     "越过雪坡，蜿蜒着上山，约莫走了七八百步，眼前是一队穿军服的士兵在一片林间空地烤着刚射杀的鹿。刘虎躲在正西侧的一棵巨型美人松后，竭尽全力压住呼吸。他趴下，扒开枯枝丛，偷偷看着鬼子们的状态。"
     liuhu "（自言自语）一共十四个，装备精良，有盒子枪，三八式步枪，还有九七式手雷。得赶紧通知大家。"
     "日本士兵拿刺刀炙烤着鹿肉，因风雪中的长时间行军他们折损了几名同伴，但这是最无关紧要的。粮食不够，只能靠运气好遇到猎物打猎。此时这个位置，他们已经能从北边山坡眺望到村子，欲望之火在暴虐的信仰中熊熊燃烧。屠杀，粮食，美酒，女人，金钱，多么多的乐趣，只要扣动手里的扳机就能拿到，只要模仿狮虎的凶狠就能征服，只要听从伟大的指引就能化鲜血为荣光！"
     guitian "在风雪的苦难中涅槃，我们是开辟新世界的英雄！"
-    play sound gun_sound
-    play sound wind_sound
+    # play sound gun_sound
+    # play sound wind_sound
 
     # 镜头4：刘虎的逃生
-    scene 2_bg5_9_on_the_mountain_bg with dissolve
     soldier "嘿，那边的枯草堆里，是张鹿皮吗？"
     "不好，要被发现了！"
     "等等，身后，身后怎么会有声音？"
@@ -388,9 +388,9 @@ label start:
     scene 4_4 with dissolve
     "刘虎迅速侧翻，身体从巨熊的利爪旁擦边闪过。巨熊的爪牙压倒了前来的日本士兵。"
     "刘虎头也不回，竭尽全力往村子跑去，没走一百步，他听到了巨熊的哀嚎，响彻群山。"
-    play sound bear_roaring_sound
-    play sound gun_sound
-    play sound wind_sound
+    # play sound bear_roaring_sound
+    # play sound gun_sound
+    # play sound wind_sound
 
     # 镜头5：自卫队的埋伏
     scene 4_5 with dissolve
@@ -405,8 +405,8 @@ label start:
     zhaohanlie "大家准备好，等我命令再开枪！"
     "心脏，跳，落……跳，落……，如此清晰。"
     "在茅草堆下，在破木屋顶，在道路拐角，在积雪覆盖的每个角落，都有蓄势待发的自卫队士兵。他们都吃过最后一碗饭了，很多人眼睛都哭肿了，视死如归。"
-    play sound wind_sound
-    play sound villagers_readying_sound
+    # play sound wind_sound
+    # play sound villagers_readying_sound
 
     # 镜头6：战斗爆发
     "鬼子如黑云出现在了北路口，大步走来。寒冷，饥饿，竟然没有打乱他们的步伐，如暴戾的落雪，染黑国土。"
@@ -417,8 +417,8 @@ label start:
     lisan "兔崽子们！打准点！"
     "霎时间枪弹如雷电撕裂长夜，火焰化作风暴吞噬战场，电光火石，风林火山！"
     "李三尽情吞吐着胸中点燃的战意，猎枪铿锵上膛，装弹，扣动扳机，贯穿，爆裂，燃烧，撕扯，狂啸，吞噬！"
-    play sound gun_sound
-    play sound battle_roar_sound
+    # play sound gun_sound
+    # play sound battle_roar_sound
 
     # 镜头7：激烈的战斗
     "敌人开始寻找掩体，但不知，在经过道路拐角，经过房屋附近，经过坑洼的土地，都有自卫队将士手持刀斧等待。"
@@ -429,8 +429,8 @@ label start:
     "在混乱的战局中，敌方少佐龟田，被不知是谁发射的子弹击杀，随着他狂热的左翼思想灰飞烟灭。"
     zhangyouxi "大家小心，敌人火力很猛！"
     wangxiufeng "我们不能退缩，一定要保护村子！"
-    play sound explosion_sound
-    play sound battle_roar_sound
+    # play sound explosion_sound
+    # play sound battle_roar_sound
 
     # 镜头8：赵汉烈的牺牲
     "敌军边打边退，意图撤离，自卫队迅速进行拦截。赵汉烈身先士卒，带队进行追击。"
@@ -441,18 +441,18 @@ label start:
     zhaohanlie "（拼尽全力呐喊）兄弟们，继续战斗，不能让鬼子得逞！"
     "众人本要扶起赵汉烈，听到这话只好含泪继续前进。"
     "敌人在强大火力掩护中逐渐撤离，自卫队成员无论再怎么舍生忘死，也没留住他们。"
-    play sound gun_sound
-    play sound battle_roar_sound
+    # play sound gun_sound
+    # play sound battle_roar_sound
 
     # 镜头9：刘虎的愤怒
-    scene 2_bg4_1_the village_bg with dissolve
+    scene 2_bg4_1_village_bg with dissolve
     liuhu "（声嘶力竭）你们这些王八蛋！我要把你们碎尸万段！你胆子你们回来啊！逃走算什么本事！逃走算什么本事！啊啊！"
     "刘虎还在追赶，还在前进，还在拼尽全力追上仇人。"
     "他追到山上，他被石头绊倒，他被子弹打伤胳膊，他的帽子被子弹打飞，他被树枝划伤，他喘不上气，他又一次看着重要的人在眼前死去而无能为力。"
     "他躺在雪地上，看着天空，紧咬嘴唇，愤恨地锤着土地。"
-    play sound gun_sound
-    play sound battle_roar_sound
-    play sound liuhu_panting_sound
+    # play sound gun_sound
+    # play sound battle_roar_sound
+    # play sound liuhu_panting_sound
 
     # 镜头10：李三的决断
     scene 4_8 with dissolve
@@ -465,12 +465,12 @@ label start:
     lisan "（给张有喜胸口来了一拳）不要对不起大家的牺牲。没什么，要么下半辈子平平安安，要么下辈子平平安安。哈哈，好了，我走了！"
     liuhu "（一瘸一拐地过来）让我也去！"
     "李三毫不理睬刘虎，提枪就往雪山上走去，没入林中……"
-    play sound fire_sound
-    play sound wind_sound
-    play sound lisan_walking_sound
+    # play sound fire_sound
+    # play sound wind_sound
+    # play sound lisan_walking_sound
 
     # 镜头11：李三的偷袭
-    scene 2_bg5_9_on_the_mountain_bg with dissolve
+    scene 2_bg5_9_on the mountain_bg with dissolve
     lisan "（自言自语）一枪，正中敌人头部。"
     "李三躲在树上，一枪击中敌人头部。但未等第二枪发射，敌人就投掷了手雷，把他从树上炸了下来。"
     "李三迅速翻滚入最近的枯草堆中，迅速换弹，上膛。敌人用子弹扫射着周围，火焰四起。李三穿过汹涌的火焰，第二颗子弹精准地射入敌人腹部。"
@@ -479,19 +479,18 @@ label start:
     "枪从左耳擦过，右腿被打中，李三举枪回击，却打入白桦树里。李三不断在树木间腾挪变换，身影敏捷如狐。"
     "手雷爆炸，冰雪、黑土、残枝四溅，树枝扎入到李三的右手臂里。李三换用左手举枪，装填，发射！虽然左手并不习惯，但还是成功击中了一个敌人的手臂！"
     "李三可不是匹夫，他有着七成的把握撤退才选择来这里偷袭！借助对山林的熟悉，李三和敌人的距离越拉越远。成功甩开，李三虽然右臂受伤，但还是成功撤回到东村的营地。"
-    play sound gun_sound
-    play sound explosion_sound
-    play sound lisan_panting_sound
+    # play sound gun_sound
+    # play sound explosion_sound
+    # play sound lisan_panting_sound
 
     # 镜头12：李三的报告
-    scene 2_bg4_1_the village_bg with dissolve
     lisan "做好准备！继续战斗！"
     zhangyouxi "（立马迎过李三来，扶着他走进战壕）李叔，局势如何？"
     lisan "打死一个，打中肚子一个，打掉手臂一个，顶多还有四个人能打了！哈哈！"
     "四个敌人朝李三逃亡方向追来，看到了营地，于是以大树为掩体，向营地进攻。"
     "自卫队成员立刻进入状态，跳到战壕里，进行回击。"
-    play sound lisan_reporting_sound
-    play sound zhangyouxi_concerned_sound
+    # play sound lisan_reporting_sound
+    # play sound zhangyouxi_concerned_sound
 
     # 镜头13：自卫队的坚守
     "战斗持续，敌方火力凶猛，且树林掩体，位置灵活，难以捕捉，进入了持久战。"
@@ -506,22 +505,22 @@ label start:
     "不过是一些总想着吃香喝辣的人，哪来的这么多无私呢?"
     "不过是一些屈服于生活的人，哪来的这么大力量呢?"
     "保家卫国的心情，这样神奇。"
-    play sound battle_roar_sound
-    play sound explosion_sound
+    # play sound battle_roar_sound
+    # play sound explosion_sound
 
     # 镜头14：刘虎的追击
     "最后的敌人，向村西边潜行而去，执行最疯狂的报复。"
     liuhu "王八蛋！你给我拿命来！我的爹！我的娘！全是被你们给害死的！"
-    play sound gun_sound
-    play sound liuhu_panting_sound
+    # play sound gun_sound
+    # play sound liuhu_panting_sound
 
     # 镜头15：张有喜的保护
     scene 4_13 with dissolve
     "张有喜也在跟着追击敌人，奈何这个敌人身手实在太过敏捷，根本无法追到！村北村东全部撤离，现在村里老弱妇孺都聚集在村西！开枪，打在墙角。再一次抡足力气上膛，开枪，又擦敌人身侧而过。已经能看到村西头的人们了！"
     zhangyouxi "大家快逃！"
     "最后的敌人开枪射中了一名老人，老人在严冬结束前倒下。大家惊慌四散，敌人突然回过枪来，子弹打中了张有喜的左肩。不行，绝对不能停下来！"
-    play sound gun_sound
-    play sound zhangyouxi_pain_sound
+    # play sound gun_sound
+    # play sound zhangyouxi_pain_sound
 
     # 镜头16：刘虎的牺牲
     "最后的敌人一个侧翻，翻过了一堵矮墙，进入了一个院子。"
@@ -539,29 +538,29 @@ label start:
     "用尽最后的气力，他高举着枪托，重重砸到敌人的头颅。"
     "敌人受重击倒地，张有喜立刻接续刘虎的战斗，继续向敌人劈砸！"
     "谁知受重伤的敌人却飞速掏出腰间的手枪，正中张有喜腹部。"
-    play sound gun_sound
-    play sound liuhu_dying_sound
+    # play sound gun_sound
+    # play sound liuhu_dying_sound
 
     # 镜头17：张有喜的倒下
     scene 4_15 with dissolve
     "一枪，两枪，三枪，连射三枪，张有喜腹部被强大的冲击力震得连连后退……"
     zhangyouxi "（遗憾不甘）要……结束了吗？我有没有，的确保护了什么呢？"
-    play sound gun_sound
-    play sound zhangyouxi_pain_sound
+    # play sound gun_sound
+    # play sound zhangyouxi_pain_sound
 
     # 镜头18：现代的醒来
     scene 4_16 with dissolve
     "张有喜在一张温暖的床上醒来，窗外，大厦林立，万家灯火璀璨，流星划过天空，梦幻浪漫。手机上显示时间：凌晨 5:00。"
     zhangyouxi "（自言自语）这是哪里？"
-    play sound bed_creaking_sound
-    play sound wind_sound
+    # play sound bed_creaking_sound
+    # play sound wind_sound
 
     # 镜头19：现代的生活
     scene familiar people_1 with dissolve
     "张有喜起身，坐电梯下楼，去看看外面。他看见早餐摊上便宜的热油条，热粥。他看见随心所欲向父母撒娇的孩子。他看见川流不息，五光十色，与花香鸟语。"
     zhangyouxi "（自言自语）这就是和平的生活吗？"
-    play sound elevator_sound
-    play sound street_noise
+    # play sound elevator_sound
+    # play sound street_noise
 
     # 镜头20：熟悉的人们
     scene _2 with dissolve
@@ -583,8 +582,8 @@ label start:
     "就这样，度过了一天。最后，在第二天的凌晨，趁家人熟睡，他轻轻走进家人的房间，帮家人盖好被子。"
     "然后醒来。"
     "他伸出的手得到回握。睁开虚弱的双眼，他看到王秀凤用柔弱的身躯护住了他，千疮百孔。掌心的温暖，从她传递而来。"
-    play sound family_breathing_sound
-    play sound gentle_touch_sound
+    # play sound family_breathing_sound
+    # play sound gentle_touch_sound
 
     # 镜头22：最后的战斗
     scene 4_14 with dissolve
@@ -594,8 +593,8 @@ label start:
     "弥留之际，他和她紧紧相拥，他最后一次睁眼，看见敌人挣扎着想要爬走。"
     "但老人，孩子，抄起耙子，棍子，砖头，向敌人砸去。"
     "下雪了呢，寒冷却温暖的冬天啊。"
-    play sound gun_sound
-    play sound battle_roar_sound
-    play sound snowfall_sound
+    # play sound gun_sound
+    # play sound battle_roar_sound
+    # play sound snowfall_sound
 
     return
