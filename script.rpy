@@ -1,4 +1,4 @@
-﻿# 备注：请看备注
+# 备注：请看备注
 
 # 声明此游戏使用的角色。颜色参数可使角色姓名着色。
 # 虽然目前图片还不全()，但我先声明好角色，后续优化时方便添加
@@ -82,15 +82,12 @@ label start:
     # 场景1：逃亡路上
     scene 1_bg1_1 with dissolve  # 1-场景1-1
     play music train_sound
-    # 没有对话，只有场景描述
 
     scene 1_bg1_2 with dissolve  # 1-场景1-2
-    # 没有对话，只有场景描述
 
     # 场景2：回忆与现实
     scene 1_bg1_2 with dissolve
     play music wind_sound
-    # 没有对话，只有场景描述
 
     # 场景3：遇救
     scene 1_bg3_1 with dissolve
