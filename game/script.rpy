@@ -72,7 +72,17 @@ image final_cg = "images/final_cg.png"
 
 # 定义音效路径,示例audio blahblah = "sounds/blahblah.wav"
 # audio = "sounds/.wav"
-# 作一个声明：场景内背景切换我使用的都是with dissolve
+# 作一个声明：场景内背景切换我使用的都是at fullscreen_auto
+
+
+#  定义自动转换大小的全屏背景
+transform fullscreen_auto:
+    zoom 1.0
+    fit "cover"  # 优先保证全屏覆盖
+    align (0.5, 0.5)
+    on show:
+        alpha 0.0
+        linear 0.5 alpha 1.0
 
 # 游戏在此开始。
 label start:
@@ -80,23 +90,33 @@ label start:
     # 第一章：逃亡与收留
 
     # 场景1：逃亡路上
-    scene 1_bg1_1 with dissolve  # 1-场景1-1
+    scene 1_bg1_1 at fullscreen_auto
+    $ renpy.pause()  # 1-场景1-1
     # play music train_sound
 
-    scene 1_bg1_2 with dissolve  # 1-场景1-2
+    scene 1_bg1_2 at fullscreen_auto
+    $ renpy.pause()  # 1-场景1-2
 
     # 场景2：回忆与现实
-    scene 1_bg2_1 with dissolve
-    scene 1_bg2_2 with dissolve
-    scene 1_bg2_3 with dissolve
+    scene 1_bg2_1 at fullscreen_auto
+    $ renpy.pause()
+    scene 1_bg2_2 at fullscreen_auto
+    $ renpy.pause()
+    scene 1_bg2_3 at fullscreen_auto
+    $ renpy.pause()
     # play music wind_sound
 
     # 场景3：遇救
-    scene 1_bg3_1 with dissolve
-    scene 1_bg3_2 with dissolve
-    scene 1_bg3_3 with dissolve
-    scene 1_bg3_4 with dissolve
-    show lidaniang at left with dissolve
+    scene 1_bg3_1 at fullscreen_auto
+    $ renpy.pause()
+    scene 1_bg3_2 at fullscreen_auto
+    $ renpy.pause()
+    scene 1_bg3_3 at fullscreen_auto
+    $ renpy.pause()
+    scene 1_bg3_4 at fullscreen_auto
+    $ renpy.pause()
+    show lidaniang at left 
+    $ renpy.pause()
     lidaniang "（惊喜，停下手中动作，直起身子）大壮，你终于醒了！（脸上皱纹舒展开，眼中满是关切）"
     zhangyouxi "（一脸茫然，微微皱眉）我不叫大壮啊，大壮是谁？"
     lidaniang "（微微一怔，眼神闪过一丝落寞）你这孩子糊涂了，连你娘都认不出来了？没事，等一会我用磨出来的玉米面给你蒸窝头吃！（勉强挤出笑容）"
@@ -111,7 +131,8 @@ label start:
     # 第二章：村庄生活
 
     # 场景4：村庄现状
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     villager_a "（无奈地叹气）等到来年开春，我就收拾着逃到山东去，这日子怎么过？"
     villager_b "（焦急地）唉，我娘腿脚不利索，想走也走不掉。那个，木生叔，能不能借我家一点粮食，我家快断粮了。"
     villager_a "（面露难色）我家日子也紧得很啊，还有俩小孩要喂，自己吃都快不够了，拿不出来了。"
@@ -120,9 +141,12 @@ label start:
     # play sound villagers_talking_sound
 
     # 场景5：结识王秀风
-    scene 2_bg5_9_on the mountain_bg with dissolve
-    show zhangyouxi at right with dissolve
-    show wangxiufeng at left with dissolve
+    scene 2_bg5_9_on the mountain_bg
+    $ renpy.pause()
+    show zhangyouxi at right 
+    $ renpy.pause()
+    show wangxiufeng at left 
+    $ renpy.pause()
     zhangyouxi "（疑惑）那个，你跟我做什么。"
     wangxiufeng "（有些慌张，眼神闪躲）我，我是来帮忙的！你不是要给李大娘和村长砍柴火吗，我也来帮忙！"
     zhangyouxi "（上下打量）奇怪，我怎么没见过你呢？你叫啥名字？"
@@ -140,13 +164,16 @@ label start:
     # play sound wangxiufeng_scream_sound
 
     # 场景6：遇虎被救
-    show zhangyouxi at right with dissolve
-    show wangxiufeng at left with dissolve
+    show zhangyouxi at right
+    $ renpy.pause()
+    show wangxiufeng at left
+    $ renpy.pause()
     wangxiufeng "（轻声，带着一丝恐惧）给你添了好多麻烦。"
     zhangyouxi "（喘着粗气）这不算啥。"
     wangxiufeng "（颤抖）你……你听到了吗？"
     zhangyouxi "（低声，紧张）要命，是老虎！"
-    scene 2_bg6_1 with dissolve
+    scene 2_bg6_1 at fullscreen_auto
+    $ renpy.pause()
     lisan "（大声）好了，别在那搂搂抱抱了，怪肉麻的！"
     zhangyouxi "（惊喜，看向李三）李三叔，原来是您！"
     # play sound tiger_roaring_sound
@@ -155,8 +182,10 @@ label start:
     # play sound gun_sound
 
     # 场景7：李三的过往
-    scene 2_bg7_1 with dissolve
-    show lisan at center with dissolve
+    scene 2_bg7_1 at fullscreen_auto
+    $ renpy.pause()
+    show lisan at fullscreen_auto
+    $ renpy.pause()
     wangxiufeng "（疑惑，看向李三）叔，你有这样的本事，连老虎都不怕，而且还默默守护着村子。可是，为什么之前鬼子来的时候，一面也不出来呢？"
     lisan "（放下酒碗，沉默片刻，眼神变得深沉）对不起，丫头，我那时候不能出手。东北三省几个月内全部被小日本侵占，我杀不尽侵略村子的小鬼子，一旦把事端闹大，整个村子可能会遭受灭顶之灾。（眼神中透露出无奈和不甘）"
     lisan "（指着地图，语气坚定）我一直等待着，组织一支东北人民自己的自卫部队，向日本人复仇！我以前当过东北军的步兵连长，行军打仗，要靠团结，要靠万众一心，同仇敌忾的气势！可那时的形势还不够。中国很多地方没有一个正确的党的领导，没有觉醒的思想，不敢团结起来为幸福的日子战斗！你们知道共产党吗？我曾遇到过一个，他才是一个真正的英雄，为了他说的‘人人自由平等的新中国’付出生命来。（眼中闪烁着希望的光芒）"
@@ -167,8 +196,10 @@ label start:
     # 第三章：新的希望
 
     # 场景8：赵汉烈到来
-    scene 2_bg8_10_village_head_home with dissolve
-    show zhaohanlie at right with dissolve
+    scene 2_bg8_10_village_head_home at fullscreen_auto
+    $ renpy.pause()
+    show zhaohanlie at right
+    $ renpy.pause()
     village_head "（微笑着介绍）这个小伙子跟你一样，不过比你早一周，沦落到这里来，被我们村子收留。"
     zhaohanlie "（拱手行礼）幸会有喜兄，在下赵汉烈。"
     village_head "（看着赵汉烈，好奇地问）看孩子你的样子不像是普通人家出来的，怎么也会这般沦落？"
@@ -179,7 +210,8 @@ label start:
     # play sound indoor_talking_sound
 
     # 场景9：组建义勇军
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     zhaohanlie "（眼神坚定，看向村庄）你看村子被日本人侵略得多么可怜，我打算在这一片地带组织抗日义勇军，大家团结起来，打鬼子，保家园。"
     zhangyouxi "（毫不犹豫，眼神同样坚定）我第一个加入，咱们一起为了‘人人平等幸福的新中国’努力吧！"
     zhaohanlie "（惊喜，紧紧握住张有喜的手）你说出了我一直想表达的话……"
@@ -202,7 +234,8 @@ label start:
 
     # 场景1：村长家的老木屋
     # 镜头1：村长家的讨论
-    scene 2_bg8_10_village_head_home with dissolve
+    scene 2_bg8_10_village_head_home at fullscreen_auto
+    $ renpy.pause()
     "村长长叹一口气"
     village_head "（皱眉）这么说的话，鬼子最快三天就要到了，对吧？"
     liuhu "哎呀！虽说这样，但也不至于三天就到吧。我估摸着，再等上四天是没什么问题的。"
@@ -231,7 +264,8 @@ label start:
 
     # 场景2：黑夜中的北山，鬼子的队伍里
     # 镜头4：鬼子的扎营
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     japanese_soldier_a "村田，你的家乡，北海道那边，也是这样冷吗？"
     cuntian "没有啊，该死，怎么这么冷，我有些想回家了。"
     japanese_soldier_c "你这样的软蛋怎么混进我们部队的？不把整个中国征服，你就想逃？"
@@ -249,7 +283,8 @@ label start:
 
     # 场景3：清晨村中央
     # 镜头5：紧急通知
-    scene 1_bg3_4_home of lidaniang_bg with dissolve
+    scene 1_bg3_4_home of lidaniang_bg at fullscreen_auto
+    $ renpy.pause()
     liuhu "（敲门）李大娘，有喜，村长有急事找大家，快到村中央集合！"
     "张有喜略带错愕看着这个穿黄大衣，戴鹿毡帽的小伙子。刘虎看上去也就十六七岁，他稚气中带着土气，脸颊冻得红红。"
     zhangyouxi "（开门，略带错愕）你是？"
@@ -265,7 +300,8 @@ label start:
     # play sound talking_sound
 
     # 镜头6：村中央的集结
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     "张有喜略带错愕看着这个穿黄大衣，戴鹿毡帽的小伙子。刘虎看上去也就十六七岁，他稚气中带着土气，脸颊冻得红红。"
     "不出意外的，有人走漏风声，有人一直都没来集合，底下逐渐议论纷纷。"
     zhaohanlie "（扯着嗓子大喊）乡亲们！安静！"
@@ -302,7 +338,8 @@ label start:
     # play sound zhaohanlie_speaking_sound
 
     # 镜头9：刘虎的画
-    scene 3_shot9 with dissolve
+    scene 3_shot9 at fullscreen_auto
+    $ renpy.pause()
     "村西头的一个屋角，刘虎捡着一块红砖碎片，在地上画画，他还是没脱他那件黄色破旧大衣，画着山，大树，房子，鹿，枪，还有书……偶尔有孩子经过他旁边。"
     liuhu "嘿，你看我画的像不像？"
     child "你倒像个傻狍子一样。"
@@ -312,7 +349,8 @@ label start:
     # play sound child_laughing_sound
 
     # 镜头10：自卫队的准备
-    scene 2_bg8_10_village_head_home with dissolve
+    scene 2_bg8_10_village_head_home at fullscreen_auto
+    $ renpy.pause()
     "村长家，暂时成了自卫队的指挥部。"
     lisan "不能打草惊蛇，要是鬼子有防备了，想打击他们就难了。"
     zhaohanlie "那依我之见，把北村的百姓撤到南边，空出北村，诱敌深入，来一波伏击。"
@@ -329,7 +367,8 @@ label start:
     # play sound talking_sound
 
     # 镜头11：北村“假村子”的修建
-    scene 3_shot11 with dissolve
+    scene 3_shot11 at fullscreen_auto
+    $ renpy.pause()
     "北村“假村子”修建中，大家都卯足了劲，为与鬼子大战做准备。"
     zhangyouxi "（扭头望向秀风）你爹真的放心你来吗？"
     wangxiufeng "（一脸嫌弃）不用管那个臭酒鬼。"
@@ -344,7 +383,8 @@ label start:
 
     # 战争
     # 镜头1：自卫队的准备
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     "一天过去，两天过去，村子平安无事，这两天也都是晴天。第三天到来，阴霾遮蔽天空，但雪迟迟未落。"
     "而刘虎带着两个敏捷的自卫队成员，在北边山林侦查鬼子队伍的踪迹，他们是掌握先机的关键。"
     lisan "大家注意，鬼子随时可能到来，保持警惕！"
@@ -353,7 +393,8 @@ label start:
     # play sound villagers_readying_sound
 
     # 镜头2：刘虎的侦查
-    scene 2_bg5_9_on the mountain_bg with dissolve
+    scene 2_bg5_9_on the mountain_bg at fullscreen_auto
+    $ renpy.pause()
     "中午，北山，小雪。"
     liuhu "（半开玩笑）哈哈，兴许鬼子绕道去别处了呢？退而……对，退而求其次！寇……对，寇贼遇大寒，道中饥寒死伤过半，驾马回逃！"
     self_defence_team_member_a "虎子，别瞎想了，注意观察。"
@@ -385,7 +426,8 @@ label start:
     "熊二十三步，鬼子七步……"
     "熊十六步，鬼子四步……"
     "熊扑了过来！就是现在！"
-    scene 4_4 with dissolve
+    scene 4_4 at fullscreen_auto
+    $ renpy.pause()
     "刘虎迅速侧翻，身体从巨熊的利爪旁擦边闪过。巨熊的爪牙压倒了前来的日本士兵。"
     "刘虎头也不回，竭尽全力往村子跑去，没走一百步，他听到了巨熊的哀嚎，响彻群山。"
     # play sound bear_roaring_sound
@@ -393,7 +435,8 @@ label start:
     # play sound wind_sound
 
     # 镜头5：自卫队的埋伏
-    scene 4_5 with dissolve
+    scene 4_5 at fullscreen_auto
+    $ renpy.pause()
     "1931 年的东北冬天，真冷啊。"
     "算起来，东北有四十多个民族，几万个村子，三千万人。"
     "有些事，有为什么吗?谁在创造苦难?谁在歌颂苦难?谁在承受苦难?谁在直面苦难?"
@@ -411,7 +454,8 @@ label start:
     # 镜头6：战斗爆发
     "鬼子如黑云出现在了北路口，大步走来。寒冷，饥饿，竟然没有打乱他们的步伐，如暴戾的落雪，染黑国土。"
     "鬼子的脚步敲在自卫队的心上。还没到准备攻击的地方。等，等，等……"
-    scene 4_6 with dissolve
+    scene 4_6 at fullscreen_auto
+    $ renpy.pause()
     "一发子弹提前脱膛而出！"
     zhaohanlie "（来不及纠正）打！"
     lisan "兔崽子们！打准点！"
@@ -422,7 +466,8 @@ label start:
 
     # 镜头7：激烈的战斗
     "敌人开始寻找掩体，但不知，在经过道路拐角，经过房屋附近，经过坑洼的土地，都有自卫队将士手持刀斧等待。"
-    scene 4_7 with dissolve
+    scene 4_7 at fullscreen_auto
+    $ renpy.pause()
     "敌军共十四人，须臾之间已死亡六人，伤三人。但硝烟之中，燃尽的漆黑大地上，敌军迅速找到了位置进行反击！"
     "一颗手雷炸塌一座木屋，其上的自卫队士兵纷纷倒地。有位队员的胸口中弹，从屋顶摔倒在地。一位队员被刺刀刺中心脏，挥舞的柴刀停在了半空。一位队员被手雷炸中，爆裂的碎片顷刻间将他吞噬。"
     "将士们目眦欲裂，气冲斗牛。胜利属于每一个人，胜利属于平凡人。"
@@ -436,7 +481,8 @@ label start:
     "敌军边打边退，意图撤离，自卫队迅速进行拦截。赵汉烈身先士卒，带队进行追击。"
     "往前奔跑，开枪，冲锋，无惧敌方枪林弹雨，穿过死亡之墙！"
     "地上一个人抓住了赵汉烈的腿，把他拽倒在地！该死！赵汉烈挥枪托砸去，这个日本兵用枪回击。"
-    scene 4_9 with dissolve
+    scene 4_9 at fullscreen_auto
+    $ renpy.pause()
     "没有任何防御，刺刀，贯穿了赵汉烈的胸膛。"
     zhaohanlie "（拼尽全力呐喊）兄弟们，继续战斗，不能让鬼子得逞！"
     "众人本要扶起赵汉烈，听到这话只好含泪继续前进。"
@@ -445,7 +491,8 @@ label start:
     # play sound battle_roar_sound
 
     # 镜头9：刘虎的愤怒
-    scene 2_bg4_1_village_bg with dissolve
+    scene 2_bg4_1_village_bg at fullscreen_auto
+    $ renpy.pause()
     liuhu "（声嘶力竭）你们这些王八蛋！我要把你们碎尸万段！你胆子你们回来啊！逃走算什么本事！逃走算什么本事！啊啊！"
     "刘虎还在追赶，还在前进，还在拼尽全力追上仇人。"
     "他追到山上，他被石头绊倒，他被子弹打伤胳膊，他的帽子被子弹打飞，他被树枝划伤，他喘不上气，他又一次看着重要的人在眼前死去而无能为力。"
@@ -455,7 +502,8 @@ label start:
     # play sound liuhu_panting_sound
 
     # 镜头10：李三的决断
-    scene 4_8 with dissolve
+    scene 4_8 at fullscreen_auto
+    $ renpy.pause()
     "敌方死七人，伤四人，还有作战能力的六人。"
     "自卫队死十五人，伤八人，已经失去了信息差优势。算是，开了个好头吗?"
     lisan "今晚，敌人应该不会再来进攻了，他们不熟地形，摸黑的劣势和奇袭的优势抵消。他们多半在山上什么地方扎营。"
@@ -470,7 +518,8 @@ label start:
     # play sound lisan_walking_sound
 
     # 镜头11：李三的偷袭
-    scene 2_bg5_9_on the mountain_bg with dissolve
+    scene 2_bg5_9_on the mountain_bg at fullscreen_auto
+    $ renpy.pause()
     lisan "（自言自语）一枪，正中敌人头部。"
     "李三躲在树上，一枪击中敌人头部。但未等第二枪发射，敌人就投掷了手雷，把他从树上炸了下来。"
     "李三迅速翻滚入最近的枯草堆中，迅速换弹，上膛。敌人用子弹扫射着周围，火焰四起。李三穿过汹涌的火焰，第二颗子弹精准地射入敌人腹部。"
@@ -496,7 +545,8 @@ label start:
     "战斗持续，敌方火力凶猛，且树林掩体，位置灵活，难以捕捉，进入了持久战。"
     "刘虎突然发现有个敌人沿着村子外围往西边潜去。刘虎挣扎着起身，扛起一把锈迹斑斑的猎枪就翻过墙瓦追去。"
     "轰隆一声巨响，李三所在的战壕被手雷炸中！"
-    scene 4_12 with dissolve
+    scene 4_12 at fullscreen_auto
+    $ renpy.pause()
     lisan "站起来吧，继续战斗，为了自由！"
     "在一片烽烟里，李三从战壕爬起，拖着千疮百孔的身体，发动最后一次冲锋。"
     "摇晃着，颤颤巍巍地，豁出最后一口气，前进，前进，前进。"
@@ -515,7 +565,8 @@ label start:
     # play sound liuhu_panting_sound
 
     # 镜头15：张有喜的保护
-    scene 4_13 with dissolve
+    scene 4_13 at fullscreen_auto
+    $ renpy.pause()
     "张有喜也在跟着追击敌人，奈何这个敌人身手实在太过敏捷，根本无法追到！村北村东全部撤离，现在村里老弱妇孺都聚集在村西！开枪，打在墙角。再一次抡足力气上膛，开枪，又擦敌人身侧而过。已经能看到村西头的人们了！"
     zhangyouxi "大家快逃！"
     "最后的敌人开枪射中了一名老人，老人在严冬结束前倒下。大家惊慌四散，敌人突然回过枪来，子弹打中了张有喜的左肩。不行，绝对不能停下来！"
@@ -542,43 +593,53 @@ label start:
     # play sound liuhu_dying_sound
 
     # 镜头17：张有喜的倒下
-    scene 4_15 with dissolve
+    scene 4_15 at fullscreen_auto
+    $ renpy.pause()
     "一枪，两枪，三枪，连射三枪，张有喜腹部被强大的冲击力震得连连后退……"
     zhangyouxi "（遗憾不甘）要……结束了吗？我有没有，的确保护了什么呢？"
     # play sound gun_sound
     # play sound zhangyouxi_pain_sound
 
     # 镜头18：现代的醒来
-    scene 4_16 with dissolve
+    scene 4_16 at fullscreen_auto
+    $ renpy.pause()
     "张有喜在一张温暖的床上醒来，窗外，大厦林立，万家灯火璀璨，流星划过天空，梦幻浪漫。手机上显示时间：凌晨 5:00。"
     zhangyouxi "（自言自语）这是哪里？"
     # play sound bed_creaking_sound
     # play sound wind_sound
 
     # 镜头19：现代的生活
-    scene familiar people_1 with dissolve
+    scene familiar people_1 at fullscreen_auto
+    $ renpy.pause()
     "张有喜起身，坐电梯下楼，去看看外面。他看见早餐摊上便宜的热油条，热粥。他看见随心所欲向父母撒娇的孩子。他看见川流不息，五光十色，与花香鸟语。"
     zhangyouxi "（自言自语）这就是和平的生活吗？"
     # play sound elevator_sound
     # play sound street_noise
 
     # 镜头20：熟悉的人们
-    scene _2 with dissolve
+    scene _2 at fullscreen_auto
+    $ renpy.pause()
     "后来，他看见李大娘和儿子在村子里种田务农，安定平安。"
-    scene _3 with dissolve
+    scene _3 at fullscreen_auto
+    $ renpy.pause()
     "他看见王秀凤在大学读书，发挥着自己的天赋，把握未来的方向。"
-    scene _4 with dissolve
+    scene _4 at fullscreen_auto
+    $ renpy.pause()
     "他看见赵汉烈戍守一方，将青春奉献给自由平等的新中国。"
-    scene _5 with dissolve
+    scene _5 at fullscreen_auto
+    $ renpy.pause()
     "他看见小双和爸爸妈妈一起去游乐园，"
-    scene _6 with dissolve
+    scene _6 at fullscreen_auto
+    $ renpy.pause()
     "村长在家准备大展厨艺。"
-    scene _7 with dissolve
+    scene _7 at fullscreen_auto
+    $ renpy.pause()
     "他看见刘虎逃学回家，挨爸妈一顿熊后吃着爸妈做的，他最喜欢的烤肉。"
     zhangyouxi "（自言自语）他们都过得很好。"
 
     # 镜头21：最后的告别
-    scene 4_13 with dissolve
+    scene 4_13 at fullscreen_auto
+    $ renpy.pause()
     "就这样，度过了一天。最后，在第二天的凌晨，趁家人熟睡，他轻轻走进家人的房间，帮家人盖好被子。"
     "然后醒来。"
     "他伸出的手得到回握。睁开虚弱的双眼，他看到王秀凤用柔弱的身躯护住了他，千疮百孔。掌心的温暖，从她传递而来。"
@@ -586,10 +647,13 @@ label start:
     # play sound gentle_touch_sound
 
     # 镜头22：最后的战斗
-    scene 4_14 with dissolve
+    scene 4_14 at fullscreen_auto
+    $ renpy.pause()
     "他接过来王秀凤舍命送来的枪，将生命压进枪膛，击穿敌人的胸口。"
-    scene Japanese devils go die_1 with dissolve
-    scene Japanese devils go die_2 with dissolve
+    scene Japanese devils go die_1 at fullscreen_auto
+    $ renpy.pause()
+    scene Japanese devils go die_2 at fullscreen_auto
+    $ renpy.pause()
     "弥留之际，他和她紧紧相拥，他最后一次睁眼，看见敌人挣扎着想要爬走。"
     "但老人，孩子，抄起耙子，棍子，砖头，向敌人砸去。"
     "下雪了呢，寒冷却温暖的冬天啊。"
